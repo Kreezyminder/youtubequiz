@@ -1,0 +1,6 @@
+{
+  "name": "YouTube Video Quizzer",
+  "description": "Generate quiz questions from a YouTube video transcript to test your memory.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

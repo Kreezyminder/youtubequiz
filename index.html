@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Quiz Generator</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@^0.7.0"
+        }
+      }
+    </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted playsinline id="bg-video">
+            <source src="https://videos.pexels.com/video-files/855321/855321-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1><span class="gradient-text-youtube">YouTube</span> Video <span class="gradient-text-quiz">Quiz</span> Generator</h1>
+            <p>Instantly test your knowledge on any video.</p>
+        </header>
+
+        <section id="main-content">
+            <form id="quiz-form">
+                <div class="form-group">
+                    <input type="url" id="youtube-url" name="youtube-url" placeholder="1. Paste YouTube URL here" required aria-label="YouTube Video URL">
+                </div>
+                
+                <a href="https://tactiq.io/tools/youtube-transcript" target="_blank" rel="noopener noreferrer" class="secondary-button">2. Get Video Transcript</a>
+
+                <div class="form-group">
+                     <textarea id="transcript-input" placeholder="3. Paste the full transcript here" required aria-label="Video Transcript"></textarea>
+                </div>
+                <button type="submit" id="generate-btn">Generate Quiz</button>
+            </form>
+             <div id="form-error" class="error hidden"></div>
+        </section>
+
+        <section id="output-container" class="hidden">
+             <div id="video-container"></div>
+             <div id="quiz-container" aria-live="polite">
+                <div id="loader" class="loader" style="display: none;" aria-label="Loading questions"></div>
+                <div id="error-message" class="error hidden"></div>
+                <div id="questions-list"></div>
+                <div id="results-container" style="display: none;">
+                    <h2 id="results-title"></h2>
+                    <p id="results-summary"></p>
+                    <div class="results-actions">
+                        <button id="retake-btn">Generate New Questions</button>
+                        <button id="restart-btn" class="secondary-button">Test a New Video</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by <a href="https://deltaprimeai.com" target="_blank" rel="noopener noreferrer"><span>Deltaprimeai</span></a></p>
+    </footer>
+
+    <script type="module" src="index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
